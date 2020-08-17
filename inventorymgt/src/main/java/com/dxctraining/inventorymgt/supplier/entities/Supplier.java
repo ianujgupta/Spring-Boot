@@ -1,12 +1,16 @@
 package com.dxctraining.inventorymgt.supplier.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="suppliers")
 public class Supplier {
 	
 	@Id
+	//@GeneratedValue
 	private int id;
 	private String name;
 	
@@ -14,24 +18,23 @@ public class Supplier {
 		this.id=id;
 		this.name=name;
 	}
-
+	Supplier(){
+		this(00,"");
+	}
 
 	@Override
 	public int hashCode() {
 		return id;
 	}
-
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (getClass() != obj.getClass())
-			return false;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Supplier that = (Supplier) o;
+        return id == that.id;
 		
-		Supplier other = (Supplier) obj;
-		if (id != other.id)
-			return false;
-		return true;
 	}
 
 

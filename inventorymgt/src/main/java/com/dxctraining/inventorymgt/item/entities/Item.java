@@ -2,6 +2,7 @@ package com.dxctraining.inventorymgt.item.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
@@ -11,12 +12,16 @@ public class Item {
 	@Id
 	private int id;
 	private String name;
+	@ManyToOne
 	private Supplier supplier;
 	
 	public Item(int id,String name,Supplier supplier) {
 		this.id=id;
 		this.name=name;
 		this.supplier=supplier;
+	}
+	Item(){
+		this(00,"",null);
 	}
 	
 	public Supplier getSupplier() {
