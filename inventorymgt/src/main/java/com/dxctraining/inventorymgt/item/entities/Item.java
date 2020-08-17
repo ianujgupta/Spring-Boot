@@ -1,8 +1,14 @@
 package com.dxctraining.inventorymgt.item.entities;
 
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+@Entity
+@Table(name="items")
 public class Item {
+	@Id
 	private int id;
 	private String name;
 	private Supplier supplier;

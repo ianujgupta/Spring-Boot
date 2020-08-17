@@ -1,11 +1,16 @@
 package com.dxctraining.inventorymgt.supplier.entities;
 
-public class Supplier {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Supplier {
+	
+	@Id
 	private int id;
 	private String name;
 	
-	Supplier(int id,String name){
+	public Supplier(int id,String name){
 		this.id=id;
 		this.name=name;
 	}

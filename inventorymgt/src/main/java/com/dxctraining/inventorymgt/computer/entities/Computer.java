@@ -5,6 +5,13 @@ import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 public class Computer extends Item {
 
+
+	private int diskSize;
+
+	public Computer(int id, String name, Supplier supplier,int diskSize) {
+		super(id, name, supplier);
+		this.diskSize=diskSize;		
+	}
 	public int getDiskSize() {
 		return diskSize;
 	}
@@ -13,10 +20,4 @@ public class Computer extends Item {
 		this.diskSize = diskSize;
 	}
 
-	private int diskSize;
-
-	public Computer(int id, String name, Supplier supplier,int diskSize) {
-		super(id, name, supplier);
-		this.diskSize=diskSize;		
-	}
 }
