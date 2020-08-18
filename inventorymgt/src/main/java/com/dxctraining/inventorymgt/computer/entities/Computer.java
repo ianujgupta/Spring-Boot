@@ -7,7 +7,7 @@ import com.dxctraining.inventorymgt.item.entities.Item;
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 @Entity
-//@Table(name = "computers")
+@Table(name = "computers")
 public class Computer extends Item {
 
 	private int diskSize;
