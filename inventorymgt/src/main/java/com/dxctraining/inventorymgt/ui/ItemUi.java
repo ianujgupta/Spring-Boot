@@ -21,10 +21,19 @@ public class ItemUi {
 	void runApp() {
 		
 		Supplier supplier1 = new Supplier(1,"mohan");
+		Supplier supplier2 = new Supplier(2,"sohan");
+		Supplier supplier3 = new Supplier(3,"Rohan");
 		supplierService.add(supplier1);
-		System.out.println("******SPrnt 1 is running");
+		supplierService.add(supplier2);
+		supplierService.add(supplier3);
+		//System.out.println("******SPrint 1 is working");
+		//System.out.println("******Sprint 2 is working");
 		Item item1 = new Item(1,"iphone",supplier1);
+		Item item2 = new Item(2,"samsung",supplier2);
+		Item item3 = new Item(3,"oneplus",supplier3);
 		itemService.addItem(item1);
+		itemService.addItem(item2);
+		itemService.addItem(item3);
 		
 		int id1 = item1.getId();
 		Item itemFetched1 = itemService.findItemById(id1); 
