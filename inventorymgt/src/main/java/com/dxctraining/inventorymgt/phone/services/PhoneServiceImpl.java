@@ -1,30 +1,30 @@
-package com.dxctraining.inventorymgt.supplier.services;
+package com.dxctraining.inventorymgt.phone.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dxctraining.inventorymgt.supplier.dao.ISupplierDao;
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+import com.dxctraining.inventorymgt.phone.dao.IPhoneDao;
+import com.dxctraining.inventorymgt.phone.entities.Phone;
 import com.dxctraining.inventorymgt.exceptions.InvalidArgumentException;
 
 @Transactional
 @Service
-public class SupplierServiceImpl implements ISupplierService {
+public class PhoneServiceImpl implements IPhoneService {
 	@Autowired
-	private ISupplierDao dao;
+	private IPhoneDao dao;
 
 	@Override
-	public Supplier findSupplierById(int id) {
-		Supplier supplier = dao.findSupplierById(id);
-		return supplier;
+	public Phone findPhoneById(int id) {
+		Phone phone = dao.findPhoneById(id);
+		return phone;
 	}
 
 	@Override
-	public Supplier add(Supplier supplier) {
-		validate(supplier);
-		supplier = dao.add(supplier);
-		return supplier;
+	public Phone add(Phone phone) {
+		validate(phone);
+		phone = dao.add(phone);
+		return phone;
 	}
 
 	@Override

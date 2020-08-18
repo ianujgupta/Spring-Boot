@@ -1,11 +1,16 @@
 package com.dxctraining.inventorymgt.item.entities;
 
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+
+@Inheritance(strategy= InheritanceType.JOINED)
 @Entity
 @Table(name="items")
 public class Item {
